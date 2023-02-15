@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RMA_Tim6.Views.RegisterPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundImageSource="register_bg.png"
+             Title="RegisterPage">
+    <VerticalStackLayout 
+            Spacing="25" 
+            Padding="30,0" 
+            VerticalOptions="Center">
+
+
+        <VerticalStackLayout Spacing="5" Margin="0,0,0,20">
+            <Label Text="Sign Up" FontSize="36" FontFamily="PlayfairDisplay" FontAttributes="Bold" TextColor="Black" HorizontalTextAlignment="Center" />
+            <Label Text ="Create an account" FontSize="24" FontFamily="PlayfairDisplay" TextColor="Black" HorizontalTextAlignment="Center" />
+        </VerticalStackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Frame ZIndex="1" HasShadow="True" BorderColor="White" HeightRequest="56" WidthRequest="56" CornerRadius="28">
+                <Image Source="user2.png" HeightRequest="20" WidthRequest="20" />
+            </Frame>
+            <Frame HeightRequest="45" Margin="-20,0,0,0" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand">
+                <Entry x:Name="entryIme" Margin="20,0,0,0" VerticalOptions="Center" Placeholder="First Name" Keyboard="Email" />
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Frame ZIndex="1" HasShadow="True" BorderColor="White" HeightRequest="56" WidthRequest="56" CornerRadius="28">
+                <Image Source="user2.png" HeightRequest="20" WidthRequest="20" />
+            </Frame>
+            <Frame HeightRequest="45" Margin="-20,0,0,0" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand">
+                <Entry x:Name="entryPrezime" Margin="20,0,0,0" VerticalOptions="Center" Placeholder="Last Name" Keyboard="Email" />
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Frame ZIndex="1" HasShadow="True" BorderColor="White" HeightRequest="56" WidthRequest="56" CornerRadius="28">
+                <Image Source="email.png" HeightRequest="20" WidthRequest="20" />
+            </Frame>
+            <Frame HeightRequest="45" Margin="-20,0,0,0" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand">
+                <Entry x:Name="entryEmail" Margin="20,0,0,0" VerticalOptions="Center" Placeholder="E-mail" Keyboard="Email" />
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Frame ZIndex="1" HasShadow="True" BorderColor="White" HeightRequest="56" WidthRequest="56" CornerRadius="28">
+                <Image Source="user.png" HeightRequest="20" WidthRequest="20" />
+            </Frame>
+            <Frame HeightRequest="45" Margin="-20,0,0,0" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand">
+                <Entry x:Name="entryUsername" Margin="20,0,0,0" VerticalOptions="Center" Placeholder="Username" Keyboard="Email" />
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Frame ZIndex="1" HasShadow="True" BorderColor="White" HeightRequest="56" WidthRequest="56" CornerRadius="28">
+                <Image Source="password.png" HeightRequest="20" WidthRequest="20" />
+            </Frame>
+            <Frame HeightRequest="45" Margin="-20,0,0,0" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand">
+                <Entry x:Name="entrySifra" Margin="20,0,0,0" VerticalOptions="Center" Placeholder="Password" IsPassword="True" />
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Frame ZIndex="1" HasShadow="True" BorderColor="White" HeightRequest="56" WidthRequest="56" CornerRadius="28">
+                <Image Source="password.png" HeightRequest="20" WidthRequest="20" />
+            </Frame>
+            <Frame HeightRequest="45" Margin="-20,0,0,0" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand">
+                <Entry x:Name="entryPotvrdiSifru" Margin="20,0,0,0" VerticalOptions="Center" Placeholder="Re-enter password" IsPassword="True" />
+            </Frame>
+        </StackLayout>
+
+        <Button Text="Confirm" WidthRequest="140" HeightRequest="50" BackgroundColor="#304b3a" CornerRadius="20" HorizontalOptions="Center" Clicked="Confirm_Clicked"/>
+
+        <StackLayout Orientation="Vertical" Margin="0,0,0,0">
+            <Button Text="Back" BackgroundColor="#304b3a" WidthRequest="70" HorizontalOptions="Start" CornerRadius="20" Clicked="Button_Clicked_Back"/>
+        </StackLayout>
+        
+    </VerticalStackLayout>
+</ContentPage>

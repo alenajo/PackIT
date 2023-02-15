@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:RMA_Tim6.ViewModels"
+             xmlns:models="clr-namespace:RMA_Tim6.Models"
+             x:DataType="viewmodels:GroupsViewModel"
+             x:Class="RMA_Tim6.Views.GroupsPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundImageSource="home_bg.png"
+             Title="GroupsPage">
+
+    <ListView ItemsSource="{Binding Grupe}"
+              HasUnevenRows="True">
+        <ListView.ItemTemplate>
+            <DataTemplate x:DataType="models:Grupa">
+                <ViewCell>
+                    <Grid Padding="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="1" Padding="6" RowSpacing="1" WidthRequest="370">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="AUTO"/>
+                                <RowDefinition Height="AUTO"/>
+                                <RowDefinition Height="AUTO"/>
+                            </Grid.RowDefinitions>
+
+                            <Label Text="{Binding Name}"
+                                   FontAttributes="Bold"
+                                   FontSize="26"
+                                   Padding="3"
+                                   TextColor="White"
+                                   FontFamily="PlayfairDisplay"
+                                   />
+
+                            <VerticalStackLayout 
+                            BindableLayout.ItemsSource="{Binding Items}"
+                            BackgroundColor="WhiteSmoke"
+                            Padding="10"
+                            Spacing="10"
+                            HeightRequest="470"                           
+                            Grid.Row="1"
+                            >
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                    <HorizontalStackLayout>
+                                        <CheckBox Color="#32573c" />
+                                        <Label Text="{Binding .}"
+                                               FontSize="18"
+                                               Padding="3"/>
+                                    </HorizontalStackLayout>
+                                </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </VerticalStackLayout>
+                            <Button Grid.Row="2" 
+                                    WidthRequest="110"
+                                    Text="+ Add Item"
+                                    BackgroundColor="#304b3a"
+                                    Margin="0,-20,0,0"
+                                    CornerRadius="20"
+                                    Clicked="AddItem_Clicked"/>
+                        </Grid>
+
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+        
+</ContentPage>

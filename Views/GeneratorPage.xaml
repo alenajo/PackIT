@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RMA_Tim6.Views.GeneratorPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundImageSource="register_bg"
+             Title="GeneratorPage">
+    <ScrollView> 
+    <VerticalStackLayout>
+        
+        <Label 
+            Text="PackIt"
+            FontFamily="GrandHotel"
+            FontSize="44"
+            TextColor="AntiqueWhite"
+            Padding="6"
+            />
+            <Label Text="Let's make you a personalized list"
+                   FontSize="20"
+                   FontFamily="PlayfairDisplay"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,20"/>
+        
+        <!-- Title -->
+
+            <Frame WidthRequest="360"
+                   HeightRequest="120"
+                   CornerRadius="0"
+                   Margin="0,0,0,10"
+                   HorizontalOptions="Center"
+                   >
+                <VerticalStackLayout HorizontalOptions="Center" Spacing="4">
+                    <Label Text="Title"
+                           TextColor="DimGray"
+                           FontSize="18"
+                           Margin="0,0,0,6"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"/>
+                    <Entry x:Name="uneseniNaslov"
+                           Placeholder="List name"
+                           WidthRequest="300"
+                           BackgroundColor="#f1f1f1"
+                           TextColor="#304b3a"
+                           FontSize="16"
+                           HorizontalTextAlignment="Center"
+                       />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Gender -->
+
+            <Frame WidthRequest="360"
+                   HeightRequest="180"
+                   Padding="0"
+                   CornerRadius="0"
+                   Margin="0,0,0,10"
+            HorizontalOptions="Center">
+
+                <Grid RowSpacing="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Text="Gender"
+                           TextColor="DimGray"
+                           FontSize="18"
+                           Margin="0,14,0,0"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           />
+
+                <HorizontalStackLayout
+                        HorizontalOptions="CenterAndExpand"
+                        Spacing="10" Padding="6" Grid.Row="1">
+                    <Frame HorizontalOptions="Start" Padding="8" CornerRadius="10" BorderColor="Gray" HeightRequest="112" WidthRequest="120">
+                        <VerticalStackLayout BackgroundColor="White">
+                            <CheckBox Color="#32573c" x:Name="Gender1Checkbox" HorizontalOptions="Start"> </CheckBox>
+                            <Image Source="fem.png" HeightRequest="30"></Image>
+                            <Label Text="Female" FontSize="18" Padding="9" HorizontalTextAlignment="Center" TextColor="#32573c" ></Label>
+                        </VerticalStackLayout>
+                    </Frame>
+                    <Frame HorizontalOptions="End" Padding="8" CornerRadius="10" BorderColor="Gray" HeightRequest="112" WidthRequest="120">
+                        <VerticalStackLayout BackgroundColor="White">
+                            <CheckBox Color="#32573c" x:Name="Gender2Checkbox" HorizontalOptions="Start"></CheckBox>
+                            <Image Source="male.png" HeightRequest="30"></Image>
+                            <Label Text="Male" FontSize="18" Padding="9" HorizontalTextAlignment="Center" TextColor="#32573c"></Label>
+                        </VerticalStackLayout>
+                    </Frame>
+                </HorizontalStackLayout>
+                </Grid>
+            </Frame>
+
+            <!-- Departure and return date -->
+            <Frame WidthRequest="360"
+                   HeightRequest="120"
+                   Padding="12"
+                   CornerRadius="0"
+                   Margin="0,0,0,10"
+                   HorizontalOptions="Center">
+                
+                <Grid RowSpacing="8" HorizontalOptions="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                   
+                    <HorizontalStackLayout  Grid.Row="1" HorizontalOptions="Start" Spacing="6">
+                        <VerticalStackLayout Spacing="6">
+                            <Label Text="Departure date"
+                           TextColor="DimGray"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           Margin="0,0,0,0"/>
+                            <Frame  
+                               CornerRadius="10"
+                               HorizontalOptions="Start"
+                               BackgroundColor="White"
+                               WidthRequest="155"
+                               HeightRequest="45"
+                               Padding="0"
+                               BorderColor="Gray"
+                            >
+                                <DatePicker HorizontalOptions="CenterAndExpand"
+                                            x:Name="startDatePicker"
+                                            FontSize="17"
+                                            FontAttributes="Bold"
+                                            TextColor="DimGray"
+                                            Format="dd.M.yyyy.">
+                                </DatePicker>
+                        </Frame>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Spacing="6" HorizontalOptions="Center"> 
+                        <Label Text="Return date"
+                           TextColor="DimGray"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           Margin="0,0,0,0"/>
+
+                        <Frame  
+                               CornerRadius="10"
+                               HorizontalOptions="End"
+                               BackgroundColor="White"
+                               WidthRequest="155"
+                               HeightRequest="45"
+                               Padding="0"
+                               BorderColor="Gray"
+                            >
+                            <DatePicker                                
+                               HorizontalOptions="CenterAndExpand"
+                               x:Name="endDatePicker"
+                               FontSize="17"
+                                FontAttributes="Bold"
+                                TextColor="DimGray"
+                               Format="dd.M.yyyy."> 
+                            </DatePicker>
+                        </Frame>
+                        </VerticalStackLayout>
+
+                    </HorizontalStackLayout>
+                </Grid>
+            </Frame>
+        
+        <!-- Category picker -->
+
+            <Frame WidthRequest="360"
+                   HeightRequest="70"
+                   Padding="12"
+                   CornerRadius="0"
+                   Margin="0,0,0,10"
+                   HorizontalOptions="Center">
+
+
+                <Picker x:Name="categoryPicker"
+                        Title="Select a category"
+                        TextColor="DimGray"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Start"
+                           Margin="20,0,0,0">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Winter</x:String>
+                            <x:String>Summer</x:String>
+                            <x:String>Road Trip</x:String>
+                            <x:String>Business Trip</x:String>
+                            <x:String>Camping</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </Frame>
+        
+        <!-- Activities (beach, skiing, camping, hiking, gym, business) -->
+
+            <Frame WidthRequest="360"
+                   HeightRequest="280"
+                   Padding="0"
+                   CornerRadius="0"
+                   Margin="0,0,0,10"
+                   HorizontalOptions="Center">
+
+                <Grid RowSpacing="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Text="Choose activities"
+                           Grid.Row="0"
+                           TextColor="DimGray"
+                           FontSize="18"
+                           Margin="0,14,0,10"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           />
+
+                    <HorizontalStackLayout
+                        HorizontalOptions="CenterAndExpand"
+                        Spacing="10" Padding="6" Grid.Row="1">
+                        <Frame HorizontalOptions="Start" Padding="4" CornerRadius="10" BorderColor="Gray" HeightRequest="98" WidthRequest="100">
+                            <VerticalStackLayout BackgroundColor="White">
+                                <CheckBox Color="#32573c" x:Name="BeachCheckbox" HorizontalOptions="Start"></CheckBox>
+                                <Image Source="beach.png" HeightRequest="30"></Image>
+                                <Label Text="Beach" FontSize="16" Padding="2" HorizontalTextAlignment="Center" TextColor="#32573c" ></Label>
+                            </VerticalStackLayout>
+                        </Frame>
+                        <Frame  Padding="4" CornerRadius="10" BorderColor="Gray" HeightRequest="98" WidthRequest="100">
+                            <VerticalStackLayout BackgroundColor="White">
+                                <CheckBox Color="#32573c" x:Name="CampingCheckbox" HorizontalOptions="Start"></CheckBox>
+                                <Image Source="camping.png" HeightRequest="30"></Image>
+                                <Label Text="Camping" FontSize="16" Padding="2" HorizontalTextAlignment="Center" TextColor="#32573c"></Label>
+                            </VerticalStackLayout>
+                        </Frame>
+                        <Frame Padding="4" CornerRadius="10" BorderColor="Gray" HeightRequest="98" WidthRequest="100">
+                            <VerticalStackLayout BackgroundColor="White">
+                                <CheckBox Color="#32573c" x:Name="BusinessCheckbox" HorizontalOptions="Start"></CheckBox>
+                                <Image Source="business.png" HeightRequest="30"></Image>
+                                <Label Text="Business" FontSize="16" Padding="2" HorizontalTextAlignment="Center" TextColor="#32573c" ></Label>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout
+                        HorizontalOptions="CenterAndExpand"
+                        Spacing="10" Padding="6" Grid.Row="2">
+                        <Frame HorizontalOptions="Start" Padding="4" CornerRadius="10" BorderColor="Gray" HeightRequest="98" WidthRequest="100">
+                            <VerticalStackLayout BackgroundColor="White">
+                                <CheckBox Color="#32573c" x:Name="HikingCheckbox" HorizontalOptions="Start"></CheckBox>
+                                <Image Source="hiking.png" HeightRequest="30"></Image>
+                                <Label Text="Hiking" FontSize="16" Padding="2" HorizontalTextAlignment="Center" TextColor="#32573c" ></Label>
+                            </VerticalStackLayout>
+                        </Frame>
+                        <Frame  Padding="4" CornerRadius="10" BorderColor="Gray" HeightRequest="98" WidthRequest="100">
+                            <VerticalStackLayout BackgroundColor="White">
+                                <CheckBox Color="#32573c" x:Name="GymCheckbox" HorizontalOptions="Start"></CheckBox>
+                                <Image Source="gym.png" HeightRequest="28"></Image>
+                                <Label Text="Gym" FontSize="16" Padding="2" HorizontalTextAlignment="Center" TextColor="#32573c"></Label>
+                            </VerticalStackLayout>
+                        </Frame>
+                        <Frame Padding="4" CornerRadius="10" BorderColor="Gray" HeightRequest="98" WidthRequest="100">
+                            <VerticalStackLayout BackgroundColor="White">
+                                <CheckBox Color="#32573c" x:Name="SkiingCheckbox" HorizontalOptions="Start"></CheckBox>
+                                <Image Source="skiing.png" HeightRequest="30"></Image>
+                                <Label Text="Skiing" FontSize="16" Padding="2" HorizontalTextAlignment="Center" TextColor="#32573c" ></Label>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </HorizontalStackLayout>
+
+                </Grid>
+            </Frame>
+        
+        <!-- Location (city and state) -->
+            <Frame WidthRequest="360"
+                   HeightRequest="130"
+                   CornerRadius="0"
+                   Margin="0,0,0,10"
+                   HorizontalOptions="Center"
+                   >
+                <VerticalStackLayout HorizontalOptions="Center" Spacing="4"> 
+                <Label Text="City, State"
+                           TextColor="DimGray"
+                           FontSize="18"
+                           Margin="0,0,0,10"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"/>
+                <Entry Placeholder="  Location"
+                       x:Name="unesenaLokacija"
+                       WidthRequest="300"
+                       BackgroundColor="#f1f1f1"
+                       TextColor="#304b3a"
+                       FontSize="18"/>
+                </VerticalStackLayout>
+            </Frame>
+            
+        <!-- Transportation (bike, boat, bus, car, train, airplane) -->
+
+
+            <Frame WidthRequest="360"
+                   HeightRequest="280"
+                   Padding="0"
+                   CornerRadius="0"
+                   Margin="0,0,0,10"
+                   HorizontalOptions="Center">
+
+                <Grid RowSpacing="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Text="Transportation mode"
+                           Grid.Row="0"
+                           TextColor="DimGray"
+                           FontSize="18"
+                           Margin="0,14,0,10"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           />
+
+                    <HorizontalStackLayout
+                        HorizontalOptions="CenterAndExpand"
+                        Spacing="10" Padding="6" Grid.Row="1">
+                        <Frame HorizontalOptions="Start" Padding="4" CornerRadius="10" BorderColor="Gray" HeightRequest="98" WidthRequest="100">
+                            <VerticalStackLayout BackgroundColor="White">
+                                <CheckBox Color="#304b3a" x:Name="AirplaneCheckbox" HorizontalOptions="Start"></CheckBox>
+                                <Image Source="airplane.png" HeightRequest="30"></Image>
+                                <Label Text="Airplane" FontSize="16" Padding="2" HorizontalTextAlignment="Center" TextColor="#304b3a" ></Label>
+                            </VerticalStackLayout>
+                        </Frame>
+                        <Frame  Padding="4" CornerRadius="10" BorderColor="Gray" HeightRequest="98" WidthRequest="100">
+                            <VerticalStackLayout BackgroundColor="White">
+                                <CheckBox Color="#304b3a" x:Name="BikeCheckbox" HorizontalOptions="Start"></CheckBox>
+                                <Image Source="bike.png" HeightRequest="30"></Image>
+                                <Label Text="Bike" FontSize="16" Padding="2" HorizontalTextAlignment="Center" TextColor="#304b3a"></Label>
+                            </VerticalStackLayout>
+                        </Frame>
+                        <Frame Padding="4" CornerRadius="10" BorderColor="Gray" HeightRequest="98" WidthRequest="100">
+                            <VerticalStackLayout BackgroundColor="White">
+                                <CheckBox Color="#304b3a" x:Name="BoatCheckbox" HorizontalOptions="Start"></CheckBox>
+                                <Image Source="boat.png" HeightRequest="30"></Image>
+                                <Label Text="Boat" FontSize="16" Padding="2" HorizontalTextAlignment="Center" TextColor="#304b3a" ></Label>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout
+                        HorizontalOptions="CenterAndExpand"
+                        Spacing="10" Padding="6" Grid.Row="2">
+                        <Frame HorizontalOptions="Start" Padding="4" CornerRadius="10" BorderColor="Gray" HeightRequest="98" WidthRequest="100">
+                            <VerticalStackLayout BackgroundColor="White">
+                                <CheckBox Color="#304b3a" x:Name="BusCheckbox" HorizontalOptions="Start"></CheckBox>
+                                <Image Source="bus.png" HeightRequest="30"></Image>
+                                <Label Text="Bus" FontSize="16" Padding="2" HorizontalTextAlignment="Center" TextColor="#304b3a" ></Label>
+                            </VerticalStackLayout>
+                        </Frame>
+                        <Frame  Padding="4" CornerRadius="10" BorderColor="Gray" HeightRequest="98" WidthRequest="100">
+                            <VerticalStackLayout BackgroundColor="White">
+                                <CheckBox Color="#304b3a" x:Name="CarCheckbox" HorizontalOptions="Start"></CheckBox>
+                                <Image Source="car.png" HeightRequest="28"></Image>
+                                <Label Text="Car" FontSize="16" Padding="2" HorizontalTextAlignment="Center" TextColor="#304b3a"></Label>
+                            </VerticalStackLayout>
+                        </Frame>
+                        <Frame Padding="4" CornerRadius="10" BorderColor="Gray" HeightRequest="98" WidthRequest="100">
+                            <VerticalStackLayout BackgroundColor="White">
+                                <CheckBox Color="#304b3a" x:Name="TrainCheckbox" HorizontalOptions="Start"></CheckBox>
+                                <Image Source="train.png" HeightRequest="30"></Image>
+                                <Label Text="Train" FontSize="16" Padding="2" HorizontalTextAlignment="Center" TextColor="#304b3a" ></Label>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </HorizontalStackLayout>
+
+                </Grid>
+            </Frame>
+        
+        <!-- Generate button -->
+            <Button Text="Submit"
+                    FontSize="20"
+                    BackgroundColor="#304b3a"
+                    WidthRequest="130"
+                    Margin="0,20,0,20"
+                    CornerRadius="40"
+                    Clicked="Submit_Clicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

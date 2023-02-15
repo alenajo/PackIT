@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <Shell
+    x:Class="RMA_Tim6.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:RMA_Tim6.Views"
+    Shell.FlyoutBehavior="Disabled">
+
+    <ShellContent
+        Title="Intro"
+        ContentTemplate="{DataTemplate local:IntroScreenView}"
+        Route="IntroScreenView" />
+
+    <ShellContent
+        Title="Dashboard"
+        ContentTemplate="{DataTemplate local:DashboardView}"
+        Route="DashboardView" />
+
+    <ShellContent 
+        Title="LoginPage"
+        ContentTemplate="{DataTemplate local:LoginPageView}"
+        Route="LoginPageView" />
+
+    <ShellContent
+        Title="RegisterPage"
+        ContentTemplate="{DataTemplate local:RegisterPage}"
+        Route="RegisterPage" />
+
+   
+
+    <TabBar x:Name="TabBar" Route="HomePage">
+        
+        <Tab Title="Home" Icon="homew.png" > 
+        <ShellContent Route="HomePage" ContentTemplate="{DataTemplate local:HomePage}"/>
+        </Tab>
+        
+        <Tab Title="Categories" Icon="categoryw.png" >
+            <ShellContent Route="GroupsPage" ContentTemplate="{DataTemplate local:GroupsPage}"/>
+        </Tab>
+
+        <Tab Title="Assistant" Icon="assistantw.png" >
+            <ShellContent Route="GeneratorPage" ContentTemplate="{DataTemplate local:GeneratorPage}"/>
+        </Tab>
+
+        <Tab Title="Profile" Icon="profilew.png" >
+            <ShellContent Route="ProfilePage" ContentTemplate="{DataTemplate local:ProfilePage}"/>
+        </Tab>
+
+        <Tab Title="Settings" Icon="settingsw.png" >
+            <ShellContent Route="SettingsPage" ContentTemplate="{DataTemplate local:SettingsPage}"/>
+        </Tab>
+
+    
+    </TabBar>
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style TargetType="TabBar">
+                <Setter Property="Shell.TabBarBackgroundColor"
+            Value="#304b3a" />
+                <Setter Property="Shell.TabBarTitleColor"
+            Value="AntiqueWhite" />
+                <Setter Property="Shell.TabBarUnselectedColor"
+             Value="AntiqueWhite"/>
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
+
+
+</Shell>

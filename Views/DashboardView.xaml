@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Shell.NavBarIsVisible="False"
+             x:Class="RMA_Tim6.Views.DashboardView"
+             Title="DashboardView"
+             BackgroundImageSource="airplanebg.jpg">
+    <VerticalStackLayout 
+            Spacing="16"
+            Padding="30,0"
+            VerticalOptions="Center">
+        <Label
+                Text="PackIt"
+                FontFamily="GrandHotel"
+                TextColor="AntiqueWhite"
+                FontSize="78"
+                HorizontalOptions="Center"
+            Margin="0,90,0,-15"/>
+
+        <Label
+                Text="Welcome to your packing assistant"
+            
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="21"
+                FontAttributes="Bold"
+                FontFamily="PlayfairDisplay"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Margin="0,0,0,50"/>
+        <Button 
+                Text="Register" 
+                FontAttributes="Bold"
+                FontSize="20"
+                HeightRequest="52"
+            Margin="0,0,0,0"
+                BackgroundColor="#372424"
+                Clicked="Register_Button_Clicked"
+                >
+        </Button>
+
+        <Button 
+                Text="Login"  
+                FontAttributes="Bold"
+                FontSize="20"
+                HeightRequest="52"
+                BackgroundColor="#372424"
+                Clicked="Login_Button_Clicked"
+                >
+        </Button>
+
+
+
+
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RMA_Tim6.Views.DetailsPage"
+             BackgroundImageSource="home_bg.png"
+             Title="DetailsPage">
+    
+        <VerticalStackLayout Padding="10"  VerticalOptions="StartAndExpand">
+        <Label x:Name="putovanjeName" FontFamily="PlayfairDisplay" FontAttributes="Bold" FontSize="40" Margin="0,10,0,20" TextColor="#304b3a"/>
+        <Label x:Name="location" Margin="0,0,20,4" FontSize="25" FontAttributes="Italic,Bold"></Label>
+        <Label x:Name="category" Margin="0,0,20,4" FontAttributes="Italic" FontSize="20"></Label>
+        <Label x:Name="duration" Margin="0,0,0,20" FontSize="18"></Label>
+        <Image x:Name="ImageUrl"></Image>
+        
+        <!-- Liste -->
+       
+        <Button Text="Save list" TextTransform="None" CornerRadius="20" Margin="0,240,0,0" BackgroundColor="#304b3a" TextColor="White" WidthRequest="180" FontAttributes="Bold,Italic" FontSize="26" Clicked="Favorite_Clicked"></Button>
+        
+    </VerticalStackLayout>
+    
+</ContentPage>

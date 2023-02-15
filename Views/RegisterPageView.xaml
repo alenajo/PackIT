@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RMA_Tim6.Views.RegisterPageView"
+             Shell.NavBarIsVisible="False"
+             BackgroundImageSource="register_bg.png"
+             Title="RegisterPageView">
+    <VerticalStackLayout 
+            Spacing="25" 
+            Padding="30,0" 
+            VerticalOptions="Center">
+
+
+        <VerticalStackLayout Spacing="5" Margin="0,0,0,60">
+            <Label Text="Welcome!" FontSize="36" FontFamily="PlayfairDisplay" FontAttributes="Bold" TextColor="Black" HorizontalTextAlignment="Center" />
+            <Label Text="Login to your account" FontSize="24" FontFamily="PlayfairDisplay" TextColor="Black" HorizontalTextAlignment="Center" />
+        </VerticalStackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Frame ZIndex="1" HasShadow="True" BorderColor="White" HeightRequest="56" WidthRequest="56" CornerRadius="28">
+                <Image Source="user.png" HeightRequest="20" WidthRequest="20" />
+            </Frame>
+            <Frame HeightRequest="45" Margin="-20,0,0,0" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand">
+                <Entry Margin="20,0,0,0" VerticalOptions="Center" Placeholder="User Name" Keyboard="Email" />
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Frame ZIndex="1" HasShadow="True" BorderColor="White" HeightRequest="56" WidthRequest="56" CornerRadius="28">
+                <Image Source="password.png" HeightRequest="20" WidthRequest="20" />
+            </Frame>
+            <Frame HeightRequest="45" Margin="-20,0,0,0" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand">
+                <Entry Margin="20,0,0,0" VerticalOptions="Center" Placeholder="Password" IsPassword="True" />
+            </Frame>
+        </StackLayout>
+
+        <Button Text="Sign In" WidthRequest="100" BackgroundColor="#304b3a" CornerRadius="20" HorizontalOptions="Center" />
+
+        <StackLayout Orientation="Horizontal" Spacing="5" HorizontalOptions="Center">
+            <Label Text="Don't have account?  " TextColor="Black" />
+            <Label Text="Sign Up here" TextColor="#304b3a" />
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>
